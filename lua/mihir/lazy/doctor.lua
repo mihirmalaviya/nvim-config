@@ -1,3 +1,3 @@
 return {
-	"iagoleal/doctor.nvim",
+  "iagoleal/doctor.nvim",
 }

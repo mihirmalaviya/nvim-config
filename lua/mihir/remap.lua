@@ -20,14 +20,14 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- vim.keymap.set("n", "<M-h>", "<cmd>silent !tmux-sessionizer -s 0 --vsplit<CR>")
 -- vim.keymap.set("n", "<M-H>", "<cmd>silent !tmux new tmux-sessionizer -s 0<CR>")
 vim.keymap.set("n", "<leader>f", function()
-	require("conform").format({ bufnr = 0 })
+  require("conform").format({ bufnr = 0 })
 end)
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>ca", function()
-    require("cellular-automaton").start_animation("make_it_rain")
+  require("cellular-automaton").start_animation("make_it_rain")
 end)
 
 -- Unmap arrow keys in normal and visual mode
