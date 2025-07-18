@@ -7,8 +7,10 @@ return {
 				themes = {
 					"gruvbox",
 					"gruvbox-material",
+					"gruvbox-material-dark-v1",
 					"kanagawa-wave",
 					"kanagawa-dragon",
+					"zenbones",
 					"rose-pine",
 					"ayu",
 				},
@@ -32,7 +34,7 @@ return {
 				},
 				invert_selection = true,
 				invert_intend_guides = false,
-				contrast = "hard", -- can be "hard", "soft" or empty string
+				contrast = "hard",
 			})
 			-- vim.cmd("colorscheme gruvbox")
 
@@ -55,6 +57,7 @@ return {
 	},
 	{ "sainnhe/gruvbox-material" },
 	{ "rebelot/kanagawa.nvim" },
+	{ "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "ayu-theme/ayu-vim" },
 }

@@ -5,10 +5,10 @@ return {
         -- statusline.setup {
         --     -- use_icons = false,
         -- }
-        local starter = require 'mini.starter'
-        starter.setup {}
-        -- local colors = require 'mini.colors'
-        -- colors.setup {}
+        -- local starter = require 'mini.starter'
+        -- starter.setup {}
+        local colors = require 'mini.colors'
+        colors.setup {}
     end
 }
 
