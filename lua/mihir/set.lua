@@ -30,6 +30,9 @@ vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
 
+-- removing end of buffer ~
+vim.opt.fillchars = { eob = " " }
+
 vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
