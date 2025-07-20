@@ -1,3 +1,11 @@
+function ColorMyPencils(color)
+  color = color or vim.g.colors_name
+  vim.cmd.colorscheme(color)
+
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 return {
   {
     "zaldih/themery.nvim",
@@ -19,6 +27,7 @@ return {
           "rose-pine",
           "ayu",
         },
+        globalAfter = [[ColorMyPencils()]],
       })
 
       vim.keymap.set("n", "<leader>t", ":Themery<CR>")
