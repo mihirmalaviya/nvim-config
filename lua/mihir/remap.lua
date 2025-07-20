@@ -1,19 +1,23 @@
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set({ "n", "v" }, "<Up>", "<Nop>")
+vim.keymap.set({ "n", "v" }, "<Down>", "<Nop>")
+vim.keymap.set({ "n", "v" }, "<Left>", "<Nop>")
+vim.keymap.set({ "n", "v" }, "<Right>", "<Nop>")
 
-vim.keymap.set("n", "<leader>T", function()
-  if vim.o.background == "dark" then
-    vim.o.background = "light"
-  else
-    vim.o.background = "dark"
-  end
-end, { desc = "Toggle background" })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("v", "<leader>x", ":lua<CR>")
 
+vim.keymap.set("n", "<leader>T", function()
+  vim.o.background = (vim.o.background == "dark") and "light" or "dark"
+end, { desc = "Toggle dark/light mode" })
+
+vim.keymap.set("n", "<leader>ve", ":e ~/.config/nvim<CR>")
+
+-- moving text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- keep the mouse zz'd on the screen
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -37,9 +41,3 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>ca", function()
   require("cellular-automaton").start_animation("make_it_rain")
 end)
-
--- Unmap arrow keys in normal and visual mode
-vim.keymap.set({ "n", "v" }, "<Up>", "<Nop>")
-vim.keymap.set({ "n", "v" }, "<Down>", "<Nop>")
-vim.keymap.set({ "n", "v" }, "<Left>", "<Nop>")
-vim.keymap.set({ "n", "v" }, "<Right>", "<Nop>")

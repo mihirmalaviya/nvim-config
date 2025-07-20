@@ -31,9 +31,9 @@ local header_art = {
   --
 }
 
-local if_nil = vim.F.if_nil
-local leader = "SPC"
-
+-- local if_nil = vim.F.if_nil
+-- local leader = "SPC"
+--
 -- --- @param sc string
 -- --- @param txt string
 -- --- @param keybind string? optional
@@ -69,9 +69,9 @@ local leader = "SPC"
 
 local binds = {
   { "e", ":ene<CR>" },
-  { "r", ":Telescope oldfiles<CR>" },
-  { "s", ":e ~/.config/nvim<CR>" },
-  { "q", ":q<CR>" },
+  -- { "r", ":Telescope oldfiles<CR>" },
+  -- { "s", ":e ~/.config/nvim<CR>" },
+  -- { "q", ":q<CR>" },
 }
 
 return {
