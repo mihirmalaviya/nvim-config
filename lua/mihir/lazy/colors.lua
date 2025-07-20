@@ -11,6 +11,11 @@ return {
           "kanagawa-wave",
           "kanagawa-dragon",
           "zenbones",
+          "lackluster",
+          "lackluster-dark",
+          "lackluster-night",
+          "lackluster-mint",
+          "carbonfox",
           "rose-pine",
           "ayu",
         },
@@ -21,7 +26,6 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    -- lazy = false,
     config = function()
       require("gruvbox").setup({
         underline = false,
@@ -36,28 +40,13 @@ return {
         invert_intend_guides = false,
         contrast = "hard",
       })
-      -- vim.cmd("colorscheme gruvbox")
-
-      -- local colors = require("gruvbox").palette
-      --
-      -- vim.o.termguicolors = true
-      --
-      -- -- vim.api.nvim_set_hl(0, "CursorNormal", { fg = normal.bg, bg = normal.fg })
-      -- vim.api.nvim_set_hl(0, "CursorInsert", { fg = colors.dark0_hard, bg = colors.bright_blue })
-      -- vim.api.nvim_set_hl(0, "CursorVisual", { fg = "#ffffff", bg = "#000000" })
-      -- -- vim.api.nvim_set_hl(0, "CursorReplace", { fg = normal.bg, bg = yellow.fg })
-      --
-      -- vim.o.guicursor = table.concat({
-      -- 	-- "n:block-CursorNormal",
-      -- 	"i-ci:block-CursorInsert",
-      -- 	"v:block-CursorVisual",
-      -- 	-- "r-cr:block-CursorReplace",
-      -- }, ",")
     end,
   },
-  { "sainnhe/gruvbox-material" },
-  { "rebelot/kanagawa.nvim" },
+  "sainnhe/gruvbox-material",
+  "rebelot/kanagawa.nvim",
+  "slugbyte/lackluster.nvim",
+  "EdenEast/nightfox.nvim",
+  "ayu-theme/ayu-vim",
   { "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
   { "rose-pine/neovim", name = "rose-pine" },
-  { "ayu-theme/ayu-vim" },
 }

@@ -1,6 +1,6 @@
---- @param trunc_width number|nil trunctates component when screen width is less then trunc_width
+--- @param trunc_width number? trunctates component when screen width is less then trunc_width
 --- @param trunc_len number truncates component to trunc_len number of chars
---- @param hide_width number|nil hides component when window width is smaller then hide_width
+--- @param hide_width number? hides component when window width is smaller then hide_width
 --- @param no_ellipsis boolean whether to disable adding '...' at end after truncation
 --- return function that can format the component accordingly
 local function trunc(trunc_width, trunc_len, hide_width, no_ellipsis)
@@ -22,16 +22,26 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        -- theme = "gruvbox",
-        -- theme = "gruvbox-material",
-        theme = "auto",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
       },
       sections = {
-        lualine_a = {
-          { "mode", fmt = trunc(100, 1, nil, true) },
+        -- lualine_a = {
+        --   { "mode", fmt = trunc(100, 1, nil, true) },
+        -- },
+        lualine_b = {
+          "branch",
+          "diff",
+          -- "diagnostics",
         },
+        lualine_c = { "filename" },
+        lualine_x = {
+          -- "encoding",
+          -- "fileformat",
+          "filetype",
+        },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
       },
     })
   end,

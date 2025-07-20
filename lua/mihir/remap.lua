@@ -1,6 +1,14 @@
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+vim.keymap.set("n", "<leader>T", function()
+  if vim.o.background == "dark" then
+    vim.o.background = "light"
+  else
+    vim.o.background = "dark"
+  end
+end, { desc = "Toggle background" })
+
 vim.keymap.set("v", "<leader>x", ":lua<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
