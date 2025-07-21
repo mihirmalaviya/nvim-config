@@ -18,6 +18,9 @@ return {
           "gruvbox-material-dark-v1",
           "kanagawa-wave",
           "kanagawa-dragon",
+          "tokyonight-night",
+          "tokyonight-storm",
+          "tokyonight-moon",
           "zenbones",
           "lackluster",
           "lackluster-dark",
@@ -33,29 +36,14 @@ return {
       vim.keymap.set("n", "<leader>t", ":Themery<CR>")
     end,
   },
-  {
-    "ellisonleao/gruvbox.nvim",
-    config = function()
-      require("gruvbox").setup({
-        underline = false,
-        italic = {
-          strings = false,
-          emphasis = false,
-          comments = false,
-          operators = false,
-          folds = false,
-        },
-        invert_selection = true,
-        invert_intend_guides = false,
-        contrast = "hard",
-      })
-    end,
-  },
+  -- "RRethy/base16-nvim",
+  "ellisonleao/gruvbox.nvim",
   "sainnhe/gruvbox-material",
   "rebelot/kanagawa.nvim",
   "slugbyte/lackluster.nvim",
   "EdenEast/nightfox.nvim",
   "ayu-theme/ayu-vim",
+  "folke/tokyonight.nvim",
   { "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
   { "rose-pine/neovim", name = "rose-pine" },
 }
