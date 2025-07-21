@@ -1,8 +1,6 @@
 -- Made with 'mini.colors' module of https://github.com/echasnovski/mini.nvim
 
-if vim.g.colors_name ~= nil then
-  vim.cmd("highlight clear")
-end
+if vim.g.colors_name ~= nil then vim.cmd('highlight clear') end
 vim.g.colors_name = "gruvbox-material-dark-v1"
 
 -- Highlight groups
@@ -2559,5 +2557,3 @@ g.terminal_color_12 = "#7daea3"
 g.terminal_color_13 = "#d3869b"
 g.terminal_color_14 = "#89b482"
 g.terminal_color_15 = "#d4be98"
-
--- hi(0, "Visual", { reverse = true })
