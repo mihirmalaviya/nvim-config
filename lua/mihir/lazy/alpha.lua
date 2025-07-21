@@ -31,42 +31,6 @@ local header_art = {
   --
 }
 
--- local if_nil = vim.F.if_nil
--- local leader = "SPC"
---
--- --- @param sc string
--- --- @param txt string
--- --- @param keybind string? optional
--- --- @param keybind_opts table? optional
--- local function button(sc, txt, keybind, keybind_opts)
---   local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
---
---   local opts = {
---     position = "center",
---     shortcut = "[" .. sc .. "]",
---     cursor = 0,
---     width = 50,
---     align_shortcut = "right",
---     hl_shortcut = "Keyword",
---   }
---   if keybind then
---     keybind_opts = if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
---     opts.keymap = { "n", sc_, keybind, keybind_opts }
---   end
---
---   local function on_press()
---     local key = vim.api.nvim_replace_termcodes(keybind or sc_ .. "<Ignore>", true, false, true)
---     vim.api.nvim_feedkeys(key, "t", false)
---   end
---
---   return {
---     type = "button",
---     val = txt,
---     on_press = on_press,
---     opts = opts,
---   }
--- end
-
 local binds = {
   { "e", ":ene<CR>" },
   -- { "r", ":Telescope oldfiles<CR>" },
@@ -75,14 +39,14 @@ local binds = {
 }
 
 return {
-  { "rubiin/fortune.nvim", config = { content_type = "tips" } },
-
+  -- { "rubiin/fortune.nvim", config = { content_type = "tips" } },
   {
     "goolord/alpha-nvim",
     dependencies = { "echasnovski/mini.icons" },
     config = function()
       local alpha = require("alpha")
       -- local fortune = require("fortune").get_fortune()
+      local quotes = require("mihir.custom.quotes")
 
       local dashboard = require("alpha.themes.dashboard")
 
@@ -97,18 +61,16 @@ return {
       })
 
       dashboard.section.header.val = {}
+      dashboard.section.buttons.val = {}
+
       -- dashboard.section.header.val = header_art
 
-      dashboard.section.buttons.val = {}
-      -- dashboard.section.buttons.val = {
-      --   button("e", "New file", ":ene <BAR> startinsert <CR>"),
-      --   button("r", "Recent", ":Telescope oldfiles<CR>"),
-      --   button("s", "Settings", ":e ~/.config/nvim<CR>"),
+      -- dashboard.section.footer.val = "An idiot admires complexity, a genius admires simplicity. -- Terry A. Davis"
+      -- gives fortune without the author
+      -- dashboard.section.footer.val = {
+      --   unpack(fortune, 1, #fortune - 1),
       -- }
-
-      dashboard.section.footer.val = "An idiot admires complexity, a genius admires simplicity. -- Terry A. Davis"
-      -- dashboard.section.footer.val = fortune
-      -- dashboard.section.footer.val = { unpack(fortune, 1, #fortune - 1) } -- gives fortune without the author
+      dashboard.section.footer.val = quotes.random_quote()
 
       -- dashboard.opts.opts.noautocmd = true
       alpha.setup(dashboard.opts)
