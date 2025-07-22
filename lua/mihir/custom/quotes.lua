@@ -15,15 +15,20 @@ local quotes = {
     "Premature optimization is the root of all evil.",
     "Donald Knuth",
   },
+
+  -- BOOK QUOTES
   {
-    "... the matter is now so clear to me, the nature of real space so palpable, that methinks I could make a child understand it.",
+    "the matter is now so clear to me, the nature of real space so palpable, that methinks I could make a child understand it.",
     "Edwin A. Abbott, Flatland: A Romance of Many Dimensions",
   },
 }
 
-local delimiter = " - "
+local delimiter = "  --- "
 
 local function right_adjust(str, width)
+  if width < #str then
+    return str
+  end
   return string.rep(" ", width - #str) .. str
 end
 
@@ -47,6 +52,7 @@ local function wrap_text(q, max_width)
 
     if line_len + additional_len > max_width then
       table.insert(lines, table.concat(current_line, " "))
+
       current_line = {}
       line_len = 0
     end
@@ -60,7 +66,7 @@ local function wrap_text(q, max_width)
     table.insert(lines, last_line)
   end
 
-  if #last_line >= #attribution then
+  if #last_line + #attribution > max_width then
     table.insert(lines, "")
   end
 
