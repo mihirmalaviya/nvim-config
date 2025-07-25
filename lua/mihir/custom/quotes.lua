@@ -23,7 +23,7 @@ local quotes = {
   },
 }
 
-local delimiter = "  --- "
+local delimiter = "  -- "
 
 local function right_adjust(str, width)
   if width < #str then
