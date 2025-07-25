@@ -1,3 +1,4 @@
+-- TODO this removes the fg for Normal highlihgt group
 function ColorMyPencils(color)
   color = color or vim.g.colors_name
   vim.cmd.colorscheme(color)
@@ -10,28 +11,24 @@ return {
   {
     "zaldih/themery.nvim",
     lazy = false,
+
     config = function()
       require("themery").setup({
         themes = {
           "gruvbox",
           "gruvbox-material",
-          "gruvbox-material-dark-v1",
           "gruvbox-material-dark-v2",
           "kanagawa-wave",
           "kanagawa-dragon",
+          "alabaster",
           "tokyonight-night",
-          "tokyonight-storm",
-          "tokyonight-moon",
           "zenbones",
           "lackluster",
           "lackluster-dark",
-          "lackluster-night",
           "lackluster-mint",
-          "carbonfox",
           "rose-pine",
-          "ayu",
         },
-        globalAfter = [[ColorMyPencils()]],
+        -- globalAfter = [[ColorMyPencils()]],
       })
 
       vim.keymap.set("n", "<leader>t", ":Themery<CR>")
@@ -84,9 +81,8 @@ return {
     end,
   },
   "rebelot/kanagawa.nvim",
+  "p00f/alabaster.nvim",
   "slugbyte/lackluster.nvim",
-  "EdenEast/nightfox.nvim",
-  "ayu-theme/ayu-vim",
   "folke/tokyonight.nvim",
   { "zenbones-theme/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
   { "rose-pine/neovim", name = "rose-pine" },

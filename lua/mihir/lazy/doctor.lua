@@ -1,3 +1,0 @@
-return {
-  "iagoleal/doctor.nvim",
-}

@@ -12,7 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  spec = "mihir.lazy",
+  spec = "mihir.plugins",
+  defaults = { lazy = true },
   change_detection = { notify = false },
 
   performance = {
