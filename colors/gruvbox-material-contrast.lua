@@ -1,7 +1,7 @@
 -- Made with 'mini.colors' module of https://github.com/echasnovski/mini.nvim
 
 if vim.g.colors_name ~= nil then vim.cmd('highlight clear') end
-vim.g.colors_name = "gruvbox-material-dark-v2"
+vim.g.colors_name = "gruvbox-material-contrast"
 
 -- Highlight groups
 local hi = vim.api.nvim_set_hl

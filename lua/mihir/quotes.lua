@@ -15,6 +15,10 @@ local quotes = {
     "Premature optimization is the root of all evil.",
     "Donald Knuth",
   },
+  {
+    "You flip a coin and it was heads on both sides, and heads was a bad idea.",
+    "Trash Dev",
+  },
 
   -- BOOK QUOTES
   {
@@ -26,9 +30,7 @@ local quotes = {
 local delimiter = "  -- "
 
 local function right_adjust(str, width)
-  if width < #str then
-    return str
-  end
+  if width < #str then return str end
   return string.rep(" ", width - #str) .. str
 end
 
@@ -40,9 +42,7 @@ local function wrap_text(q, max_width)
   local quote, author = unpack(q)
   local attribution = delimiter .. author
 
-  if #quote + #attribution <= max_width then
-    return { quote .. attribution }
-  end
+  if #quote + #attribution <= max_width then return { quote .. attribution } end
 
   local text = quote
 
@@ -62,22 +62,16 @@ local function wrap_text(q, max_width)
   end
 
   local last_line = table.concat(current_line, " ")
-  if #current_line > 0 then
-    table.insert(lines, last_line)
-  end
+  if #current_line > 0 then table.insert(lines, last_line) end
 
-  if #last_line + #attribution > max_width then
-    table.insert(lines, "")
-  end
+  if #last_line + #attribution > max_width then table.insert(lines, "") end
 
   table.insert(lines, right_adjust(attribution, max_width))
 
   return lines
 end
 
-local function format_quote(q)
-  return wrap_text(q, MAX_WIDTH)
-end
+local function format_quote(q) return wrap_text(q, MAX_WIDTH) end
 
 function M.random_quote()
   math.randomseed(os.time())

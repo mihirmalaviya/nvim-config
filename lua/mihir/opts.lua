@@ -28,13 +28,14 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
--- vim.opt.colorcolumn = "80"
-
--- removing end of buffer ~
-vim.opt.fillchars = { eob = " " }
-
-vim.g.mapleader = " "
-
 vim.opt.clipboard = "unnamedplus"
 
-vim.cmd([[ highlight Visual cterm=reverse gui=reverse ]])
+-- vim.opt.termguicolors = true
+
+-- vim.opt.winborder = "rounded"
+
+-- vim.opt.colorcolumn = "80"
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
