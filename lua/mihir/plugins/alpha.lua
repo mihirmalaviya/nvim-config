@@ -1,3 +1,4 @@
+-- TODO rewrite it better
 local binds = {
   { "e", ":ene<CR>" },
 }

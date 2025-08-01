@@ -3,16 +3,12 @@ return {
   lazy = false,
   version = false,
   config = function()
-    -- local colors = require("mini.colors")
-    -- colors.setup({})
+    local colors = require("mini.colors")
+    colors.setup({})
 
     local clue = require("mini.clue")
     clue.setup({
       triggers = {
-        -- -- leader triggers
-        -- { mode = "n", keys = "<Leader>" },
-        -- { mode = "x", keys = "<Leader>" },
-
         -- Built-in completion
         { mode = "i", keys = "<C-x>" },
 
@@ -49,7 +45,13 @@ return {
         clue.gen_clues.z(),
       },
 
-      delay = 200,
+      window = {
+        delay = 500,
+        config = {
+          width = 40,
+          border = "rounded",
+        },
+      },
     })
   end,
 }

@@ -1,6 +1,6 @@
 return {
   "catgoose/nvim-colorizer.lua",
-  lazy = "VeryLazy",
+  lazy = false,
 
   config = function()
     require("colorizer").setup({
