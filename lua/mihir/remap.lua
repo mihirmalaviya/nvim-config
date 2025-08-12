@@ -17,6 +17,7 @@ map({ "n", "v", "x" }, "<leader>s", ":e #<CR>")
 map({ "n", "v", "x" }, "<leader>S", ":sf #<CR>")
 
 map("v", "<leader>x", ":lua<CR>")
+map("x", "<leader>p", [["_dP]])
 
 -- center screen for some cursor stuff
 map("n", "J", "mzJ`z")
@@ -31,19 +32,5 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-map(
-  "n",
-  "<leader>T",
-  function() vim.o.background = (vim.o.background == "dark") and "light" or "dark" end,
-  { desc = "Toggle dark/light mode" }
-)
-
-map("x", "<leader>p", [["_dP]])
-
--- map(
---   "n",
---   "<leader>s",
---   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
---   { desc = "Replace all instances of word" }
--- )
--- map("v", "<leader>s", [["hy:%s/\V<C-r>h/<C-r>h/gI<Left><Left><Left>]], { desc = "Replace all instances of selection" })
+map("v", "P", [["ay:!play_songs.sh "a"<CR>]])
+map("n", "songs", ":tabnew<CR>:r !read_songs.sh<CR>")
