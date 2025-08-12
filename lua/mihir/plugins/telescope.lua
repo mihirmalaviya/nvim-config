@@ -28,13 +28,14 @@ return {
       { desc = "Vim Edit Config" }
     )
     -- vim.keymap.set("n", "<leader>wf", function() builtin.find_files({ cwd = "~/workspace/projects" }) end, {})
+    vim.keymap.set("n", "<leader>wv", function() builtin.find_files({ cwd = "~/vaults/vault" }) end, {})
     vim.keymap.set("n", "<leader>pr", builtin.oldfiles, {})
     -- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
     vim.keymap.set("n", "<C-p>", builtin.git_files, {})
     vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 
-    vim.keymap.set("n", "<leader>ps", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
-    vim.keymap.set("n", "<leader>pws", function() builtin.grep_string({ search = vim.fn.expand("<cword>") }) end)
-    vim.keymap.set("n", "<leader>pWs", function() builtin.grep_string({ search = vim.fn.expand("<cWORD>") }) end)
+    -- vim.keymap.set("n", "<leader>ps", function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
+    -- vim.keymap.set("n", "<leader>pws", function() builtin.grep_string({ search = vim.fn.expand("<cword>") }) end)
+    -- vim.keymap.set("n", "<leader>pWs", function() builtin.grep_string({ search = vim.fn.expand("<cWORD>") }) end)
   end,
 }

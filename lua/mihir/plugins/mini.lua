@@ -3,9 +3,6 @@ return {
   lazy = false,
   version = false,
   config = function()
-    local colors = require("mini.colors")
-    colors.setup({})
-
     local clue = require("mini.clue")
     clue.setup({
       triggers = {
