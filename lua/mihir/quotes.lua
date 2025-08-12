@@ -15,6 +15,8 @@ local quotes = {
     "Premature optimization is the root of all evil.",
     "Donald Knuth",
   },
+
+  -- YOUTUBE QUOTES
   {
     "You flip a coin and it was heads on both sides, and heads was a bad idea.",
     "Trash Dev",
