@@ -5,7 +5,7 @@ require("mihir.lazy")
 
 vim.cmd("colorscheme habamax")
 
--- vim.cmd(":hi statusline guibg=NONE")
+vim.cmd(":hi statusline guibg=NONE guifg=reverse")
 
 local names = {
   "Normal",
@@ -15,7 +15,21 @@ local names = {
   "MsgSeparator",
   "VertSplit",
   "WinSeparator",
+
   -- "StatusLine",
+  -- "StatusLineNC",
+  -- "StatusLineTerm",
+  -- "StatusLineTermNC",
+
+  "FoldColumn",
+  "LineNr",
+  "LineNrAbove",
+  "LineNrBelow",
+  "SignColumn",
+
+  "FloatBorder",
+  "FloatTitle",
+  "NormalFloat",
 }
 
 for _, n in pairs(names) do

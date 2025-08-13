@@ -33,4 +33,4 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 map("v", "P", [["ay:!play_songs.sh "a"<CR>]])
-map("n", "songs", ":tabnew<CR>:r !read_songs.sh<CR>")
+map("n", "songs", ":tabnew<CR>:r !read_songs.sh<CR>ggdd")

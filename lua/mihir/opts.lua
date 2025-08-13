@@ -28,12 +28,12 @@ vim.opt.updatetime = 50
 
 vim.opt.clipboard = "unnamedplus"
 
--- vim.opt.winborder = "rounded"
+vim.opt.winborder = "rounded"
 
 vim.opt.colorcolumn = "80"
 
 vim.opt.conceallevel = 1
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+-- vim.g.netrw_browse_split = 0
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_winsize = 25
