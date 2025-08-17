@@ -1,5 +1,3 @@
--- TODO simplify this to just be mason and lspconfig
-
 return {
   {
     "williamboman/mason.nvim",
