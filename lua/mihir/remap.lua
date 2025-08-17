@@ -7,15 +7,14 @@ map({ "n", "v" }, "<Down>", "<Nop>")
 map({ "n", "v" }, "<Left>", "<Nop>")
 map({ "n", "v" }, "<Right>", "<Nop>")
 
-map({ "n", "v" }, ";", ":", { noremap = true })
-
+-- leader keys
 map("n", "<leader>o", ":update<CR> :source<CR>")
 map("n", "<leader>w", ":write<CR>")
 map("n", "<leader>q", ":quit<CR>")
-
 map({ "n", "v", "x" }, "<leader>s", ":e #<CR>")
 map({ "n", "v", "x" }, "<leader>S", ":sf #<CR>")
-
+map({ "n", "v" }, "<leader>y", '"+y')
+map({ "n", "v" }, "<leader>d", '"+d')
 map("v", "<leader>x", ":lua<CR>")
 map("x", "<leader>p", [["_dP]])
 
@@ -33,4 +32,5 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 map("v", "P", [["ay:!play_songs.sh "a"<CR>]])
-map("n", "songs", ":tabnew<CR>:r !read_songs.sh<CR>ggdd")
+map("n", "<leader>s", ":split songs<CR>ggdG:r !read_songs.sh<CR>ggdd")
+map("n", "<leader>sn", "$F/v0*GNjzz")
