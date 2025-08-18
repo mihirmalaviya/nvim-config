@@ -1,6 +1,6 @@
 return {
   "nguyenvukhang/nvim-toggler",
-  -- lazy = false,
+  lazy = true,
   keys = { "<leader>i" },
   config = function()
     require("nvim-toggler").setup({

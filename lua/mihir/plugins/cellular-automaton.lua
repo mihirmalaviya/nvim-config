@@ -1,6 +1,7 @@
 return {
   {
     "Eandrju/cellular-automaton.nvim",
+    lazy = true,
     config = function()
       local function clamp(val, min, max) return math.min(math.max(val, min), max) end
       local ca = require("cellular-automaton")

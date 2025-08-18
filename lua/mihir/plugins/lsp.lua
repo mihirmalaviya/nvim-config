@@ -1,55 +1,44 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "neovim/nvim-lspconfig",
+  },
+  {
+    "mason-org/mason.nvim",
+    opts = {},
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
     dependencies = {
-      "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
-      "zapling/mason-conform.nvim",
+      "mason-org/mason.nvim",
     },
-    lazy = false,
     opts = {
-      servers = {
-        lua_ls = {
-          settings = {
-            Lua = {
-              diagnostics = {
-                globals = { "vim" },
-              },
-            },
-          },
-        },
-        ts_ls = {},
-        eslint = {},
-        tailwindcss = {},
+      ensure_installed = {
+        "lua_ls",
+        "basedpyright",
+        "ruff",
+        "html",
+        "clangd",
+        -- "prettierd",
       },
     },
-    config = function(_, opts)
-      require("mason").setup()
-
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "pyright",
-          "html",
-          "ts_ls",
-          "clangd",
+  },
+  {
+    "stevearc/conform.nvim",
+    keys = {
+      { "<leader>f", function() require("conform").format({ bufnr = 0 }) end },
+    },
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          lua = { "stylua" },
+          python = { "ruff_format" },
+          cpp = { "clang-format" },
+          html = { "prettierd" },
+          css = { "prettierd" },
+          javascript = { "prettierd" },
         },
       })
-
-      require("mason-conform").setup({
-        ensure_installed = {
-          "stylua",
-          "gofmt",
-          "ruff_format",
-          "prettierd",
-          "clang-format",
-        },
-      })
-
-      for server, config in pairs(opts.servers) do
-        vim.lsp.config(server, config)
-        vim.lsp.enable(server)
-      end
     end,
   },
 }

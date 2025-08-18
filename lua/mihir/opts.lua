@@ -37,9 +37,3 @@ vim.opt.winborder = "rounded"
 vim.opt.colorcolumn = "80"
 
 vim.opt.ignorecase = true
-
--- vim.opt.conceallevel = 1
-
--- vim.g.netrw_browse_split = 0
--- vim.g.netrw_banner = 0
--- vim.g.netrw_winsize = 25

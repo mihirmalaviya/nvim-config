@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.nvim",
-  lazy = false,
+  -- lazy = false,
   version = false,
   config = function()
     local clue = require("mini.clue")

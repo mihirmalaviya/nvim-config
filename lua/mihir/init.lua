@@ -5,7 +5,8 @@ require("mihir.lazy")
 
 vim.cmd("colorscheme habamax")
 
-vim.cmd(":hi statusline guibg=NONE guifg=reverse")
+vim.cmd("hi statusline   guifg=white guibg=#222222")
+vim.cmd("hi statuslinenc guifg=gray  guibg=NONE")
 
 local names = {
   "Normal",
@@ -33,11 +34,9 @@ local names = {
 }
 
 for _, n in pairs(names) do
-  local ok, gr = pcall(vim.api.nvim_get_hl, 0, { name = n })
-  if ok then
-    gr.bg = nil
-    gr.ctermbg = nil
-    gr.blend = 0
-    vim.api.nvim_set_hl(0, n, gr)
-  end
+  local gr = vim.api.nvim_get_hl(0, { name = n })
+  gr.bg = nil
+  gr.ctermbg = nil
+  gr.blend = 0
+  vim.api.nvim_set_hl(0, n, gr)
 end
