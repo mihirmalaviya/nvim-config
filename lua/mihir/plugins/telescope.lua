@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  -- lazy = false,
 
   tag = "0.1.5",
 
@@ -28,9 +27,9 @@ return {
       { desc = "Vim Edit Config" }
     )
     -- vim.keymap.set("n", "<leader>wf", function() builtin.find_files({ cwd = "~/workspace/projects" }) end, {})
-    vim.keymap.set("n", "<leader>wv", function() builtin.find_files({ cwd = "~/vaults/vault" }) end, {})
+    -- vim.keymap.set("n", "<leader>wv", function() builtin.find_files({ cwd = "~/vaults/vault" }) end, {})
     vim.keymap.set("n", "<leader>pr", builtin.oldfiles, {})
-    -- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+    vim.keymap.set("n", "<leader>pb", builtin.buffers, { desc = "Telescope buffers" })
     vim.keymap.set("n", "<C-p>", builtin.git_files, {})
     vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
 

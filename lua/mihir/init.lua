@@ -5,8 +5,8 @@ require("mihir.lazy")
 
 vim.cmd("colorscheme habamax")
 
-vim.cmd("hi statusline   guifg=white guibg=#222222")
-vim.cmd("hi statuslinenc guifg=gray  guibg=NONE")
+vim.cmd("hi StatusLine   guifg=white guibg=#222222")
+vim.cmd("hi StatusLineNC guifg=gray  guibg=NONE")
 
 local names = {
   "Normal",

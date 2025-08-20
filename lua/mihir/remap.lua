@@ -32,6 +32,7 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 map("v", "P", [["ay:!play_songs.sh "a"<CR>]])
-map("n", "<leader>m", ":split songs<CR>ggdG:r !read_songs.sh<CR>ggdd")
+map("n", "<leader>ms", ":split songs<CR>ggdG:r !read_songs.sh<CR>ggdd")
+map("n", "<leader>mv", ":vertical split songs<CR>ggdG:r !read_songs.sh<CR>ggdd")
 map("n", "<leader>mn", "$F/v0*GNjzz", { remap = true })
 map("n", "<leader>mN", "$F/v0*ggnk$F/v0*ggnzz", { remap = true })
