@@ -4,7 +4,7 @@ return {
   config = function()
     require("nvim-toggler").setup({
       inverses = {
-        ["vim"] = "emacs",
+        -- ["vim"] = "emacs",
         ["dark"] = "light",
       },
     })

@@ -1,3 +1,4 @@
+-- TODO make some more sensible keybinds and integrate the lazy loading
 return {
   "nvim-telescope/telescope.nvim",
 
@@ -9,7 +10,7 @@ return {
 
   config = function()
     require("telescope").setup({
-      defaults = require("telescope.themes").get_ivy(),
+      -- defaults = require("telescope.themes").get_ivy(),
       pickers = {
         colorscheme = {
           enable_preview = true,
@@ -19,13 +20,8 @@ return {
 
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
-    vim.keymap.set(
-      "n",
-      "<leader>ve",
-      function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end,
-      { desc = "Vim Edit Config" }
-    )
+    -- vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+    vim.keymap.set("n", "<leader>ve", function() builtin.find_files({ cwd = vim.fn.stdpath("config") }) end, {})
     -- vim.keymap.set("n", "<leader>wf", function() builtin.find_files({ cwd = "~/workspace/projects" }) end, {})
     -- vim.keymap.set("n", "<leader>wv", function() builtin.find_files({ cwd = "~/vaults/vault" }) end, {})
     vim.keymap.set("n", "<leader>pr", builtin.oldfiles, {})

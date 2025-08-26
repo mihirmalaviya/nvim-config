@@ -8,7 +8,7 @@ return {
 
       ca.register_animation({
         name = "brownian_battle",
-        fps = 30,
+        fps = 100,
 
         update = function(grid)
           local buffer = vim.deepcopy(grid)
