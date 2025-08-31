@@ -33,10 +33,10 @@ autocmd("TextYankPost", {
   end,
 })
 
-autocmd("VimResized", {
-  pattern = "*",
-  command = "wincmd =",
-})
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "wincmd =",
+-- })
 
 -- autocmd("VimResized", {
 --   pattern = "*",
@@ -53,4 +53,5 @@ autocmd("VimResized", {
 --     }
 --     vim.api.nvim_buf_set_extmark(bnr, ns_id, line_num, col_num, opts)
 --   end,
+-- 
 -- })
