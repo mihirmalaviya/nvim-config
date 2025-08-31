@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.nvim",
+  "nvim-mini/mini.nvim",
   -- lazy = false,
   version = false,
   config = function()
@@ -31,6 +31,10 @@ return {
         -- `z` key
         { mode = "n", keys = "z" },
         { mode = "x", keys = "z" },
+
+        -- Brackets
+        { mode = "n", keys = "[" },
+        { mode = "n", keys = "]" },
       },
 
       clues = {
@@ -51,7 +55,14 @@ return {
       },
     })
 
-    local colors = require("mini.colors")
-    colors.setup({})
+    local pick = require("mini.pick")
+    pick.setup({
+      options = {
+        use_cache = true,
+      },
+    })
+
+    local extra = require("mini.extra")
+    extra.setup({})
   end,
 }
